@@ -2,6 +2,8 @@ import { parseCSV } from "../src/basic-parser";
 import * as path from "path";
 
 const PEOPLE_CSV_PATH = path.join(__dirname, "../data/people.csv");
+const DOUBLEQUOTE_CSV_PATH = path.join(__dirname, "../data/doublequote.csv");
+
 
 test("parseCSV yields arrays", async () => {
   const results = await parseCSV(PEOPLE_CSV_PATH)
@@ -20,3 +22,11 @@ test("parseCSV yields only arrays", async () => {
     expect(Array.isArray(row)).toBe(true);
   }
 });
+
+test("parseCSV obeys double quotes", async () => {
+  const results = await parseCSV(DOUBLEQUOTE_CSV_PATH);
+  expect(results).toHaveLength(3);
+  expect(results[0]).toEqual(["Doe", "Jane", "I, love, CS"]);
+  expect(results[1]).toEqual(["Doe", "John", "I, hate, CS"]);
+  expect(results[2]).toEqual(["Smith", "Adam", "CS, 320"]);
+})
