@@ -3,6 +3,11 @@
 ### Task C: Proposing Enhancement
 
 - #### Step 1: Brainstorm on your own.
+- Ability to designate the first row as a "header" row
+- Ability to parse rows into objects (pass a schema into the parser)
+- Ability to sense and respect double-quoted items that may have commas inside
+- Ability to specify and enforce column type? (ex. numbers become numbers, not strings)
+- Ability to handle errors if a schema / column type is specified but an item doesn't obey it
 
 - #### Step 2: Use an LLM to help expand your perspective.
 
