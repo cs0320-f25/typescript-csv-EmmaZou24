@@ -1,0 +1,12 @@
+#1
+Some properties that a CSV parser should have are:
+- The parser should notify users when data is malformed and unable to be parsed correctly. For example, if some rows are different lengths than others, or if the type of data in certain cells is different from the specified type in the schema, then the parser should throw an appropriate exception.
+- The parser should be able to recognize double quotes as denotations for string data, and should ignore any commas within the string (and obey character escapes).
+- The parser should return the CSV values in a list of whatever format is specified by the users (through the schema), or as a default list of lists.
+- The parser should default to parsing into string values if no schema is specified.
+
+#2
+I would run this source of random data through all of my tests—especially the ones that specifically test for exceptions and edge cases. I would also use different schemas (ex. a schema for a specific object, or a schema for just an array) to test the capabilities of my parser to respond to different formats.
+
+#3
+This sprint involved proportionally much more writing/testing/planning in relation to actual coding, which I’m not surprised about, considering the design aspect of software engineering. My previous assignments have also rarely made use of libraries in a way that required me to actually know their specifications/contents. It took me a few tries to deal with the generics with the ZodTypes, and a bit of researching in order to learn how to actually create and use the schemas. I was able to avoid/fix most bugs through targeted forays into the documentation. It’s also my first time using Node.js and its run commands for an assignment, but I’ve adapted to that pretty well.
