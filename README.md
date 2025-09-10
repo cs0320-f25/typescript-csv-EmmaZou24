@@ -39,8 +39,15 @@ POOR/IRRELEVANT SUGGESTIONS:
 - #### Step 3: use an LLM to help expand your perspective.
 
     Include a list of the top 4 enhancements or edge cases you think are most valuable to explore in the next week’s sprint. Label them clearly by category (extensibility vs. functionality), and include whether they came from you, the LLM, or both. Describe these using the User Story format—see below for a definition. 
+    
+        - (From LLM) (Extensibility) As a user, I will input data from CSV's that may come directly from online databases and/or may be too big to manually check for missing fields and differently-lengthed rows. Using the parser, I will be able to see if an error occurs, and the cause of it.
+        - (From me) (Functionality) As a user, I will input data that may include columns containing text / narrative data, which in turn might contain commas. I will be able to put that narrative data into quotes and use the parser to parse each narrative as one item.
+        - (From both) (Extensibility) As a user, I will input CSV data where the first row is a "header" row, and expect some form of separation between the headers and the actual data rows when I parse my CSV.
+        - (From both) (Extensibility) As a user, I want my CSV data to be parsed into an object type that I specify, with fields corresponding to each data field in each row.
 
     Include your notes from above: what were your initial ideas, what did the LLM suggest, and how did the results differ by prompt? What resonated with you, and what didn’t? (3-5 sentences.) 
+
+        My initial ideas were primarily based on my knowledge of basic CSV functionality (and personal experience dealing with them), as well as the specifications in the class handouts. Prompting the LLM gave me some more insight into the possible edge cases of CSV handling, such as empty/missing fields and escaped characters within quotes. However, the LLM also tended to give me irrelevant information about CSV handling that should really be handled by the user, such as data import/export and using different delimiters (which goes into the realm of TSV's and such). I noticed that the answers tended to go off topic more when I asked about CSV functionality for users, versus when I specifically asked about possible edge cases.
 
 ### Design Choices
 
