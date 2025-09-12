@@ -43,7 +43,7 @@ POOR/IRRELEVANT SUGGESTIONS:
         - (From LLM) (Extensibility) As a user, I will input data from CSV's that may come directly from online databases and/or may be too big to manually check for missing fields and differently-lengthed rows. Using the parser, I will be able to see if an error occurs, and the cause of it.
         - (From me) (Functionality) As a user, I will input data that may include columns containing text / narrative data, which in turn might contain commas. I will be able to put that narrative data into quotes and use the parser to parse each narrative as one item.
         - (From both) (Extensibility) As a user, I will input CSV data where the first row is a "header" row, and expect some form of separation between the headers and the actual data rows when I parse my CSV.
-        - (From both) (Extensibility) As a user, I want my CSV data to be parsed into an object type that I specify, with fields corresponding to each data field in each row.
+        - (From both) (Extensibility) As a user, I want my CSV data to be parsed into an object type that I specify, with fields corresponding to each data field in each row. I want the parser to work even when I want to parse the same CSV into different object types.
 
     Include your notes from above: what were your initial ideas, what did the LLM suggest, and how did the results differ by prompt? What resonated with you, and what didn’t? (3-5 sentences.) 
 
