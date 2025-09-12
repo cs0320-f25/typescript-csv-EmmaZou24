@@ -7,6 +7,7 @@ const DOUBLEQUOTECOMMA_CSV_PATH = path.join(__dirname, "../data/doublequotecomma
 const DOUBLEQUOTE_CSV_PATH = path.join(__dirname, "../data/doublequote.csv");
 const NUMBERS_CSV_PATH = path.join(__dirname, "../data/numbers.csv");
 const BASIC_PEOPLE_CSV_PATH = path.join(__dirname, "../data/basicpeople.csv");
+const ESCAPED_CSV_PATH = path.join(__dirname, "../data/escaped.csv");
 
 
 test("parseCSV yields arrays", async () => {
@@ -41,6 +42,14 @@ test("parseCSV obeys double quotes with commas inside", async () => {
   expect(results[0]).toEqual(["Doe", "Jane", "I, love, CS"]);
   expect(results[1]).toEqual(["Doe", "John", "I, hate, CS"]);
   expect(results[2]).toEqual(["Smith", "Adam", "CS, 320"]);
+})
+
+test("parseCSV obeys escaped quotes within fields", async () => {
+  const results = await parseCSV(ESCAPED_CSV_PATH, undefined);
+  expect(results).toHaveLength(3);
+  expect(results[0]).toEqual(["Doe", "Jane", "\"I love CS\", she said"]);
+  expect(results[1]).toEqual(["Doe", "John", "He exclaimed \"I hate CS!\""]);
+  expect(results[2]).toEqual(["Smith", "Adam", "He chose \"CS 320\" at last"]);
 })
 
 test("parseCSV with a basic schema and CSV", async () => {
