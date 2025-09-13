@@ -120,7 +120,7 @@ test("parseCSV with different schemas, same CSV", async () => {
   expect(schema_results2[1]).toEqual({fruit:"pear", num:13, float:4.1, state:undefined});
   expect(schema_results2[2]).toEqual({fruit:"orange", num:undefined, float:5.8, state:"massachusetts"});
 })
-
+  
 test("parseCSV with refined schema", async () => {
   const schema = z.tuple([
     z.string(), //name

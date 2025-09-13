@@ -47,7 +47,7 @@ POOR/IRRELEVANT SUGGESTIONS:
 
     Include your notes from above: what were your initial ideas, what did the LLM suggest, and how did the results differ by prompt? What resonated with you, and what didn’t? (3-5 sentences.) 
 
-        My initial ideas were primarily based on my knowledge of basic CSV functionality (and personal experience dealing with them), as well as the specifications in the class handouts. Prompting the LLM gave me some more insight into the possible edge cases of CSV handling, such as empty/missing fields and escaped characters within quotes. However, the LLM also tended to give me irrelevant information about CSV handling that should really be handled by the user, such as data import/export and using different delimiters (which goes into the realm of TSV's and such). I noticed that the answers tended to go off topic more when I asked about CSV functionality for users, versus when I specifically asked about possible edge cases.
+        My initial ideas were primarily based on my knowledge of basic CSV functionality (and personal experience dealing with them), as well as the specifications in the class handouts. Prompting the LLM gave me some more insight into the possible edge cases of CSV handling, such as empty/missing fields and escaped characters within quotes. Since I am not the most familiar with CSV's and definitely not familiar with their exact specifications, this information from the LLM was quite useful. However, the LLM also tended to give me irrelevant information about CSV handling that should really be handled by the user, such as data import/export and using different delimiters (which goes into the realm of TSV's and such). I noticed that the answers tended to go off topic more when I asked about CSV functionality for users, versus when I specifically asked about possible edge cases.
 
 ### Design Choices
 
@@ -59,11 +59,26 @@ POOR/IRRELEVANT SUGGESTIONS:
 
 - #### 3. Overall experience, Bugs encountered and resolved
 #### Errors/Bugs:
+N/A
+
 #### Tests:
+I included tests to ensure that the parser...
+- Recognizes quoted fields and ignores commas within
+- Recognizes escaped quotes within quoted fields (which use double double-quotes to escape) and represents them using the Typescript method for escaping quotes (using a slash) after parsing
+- Works on empty fields and represents them as an empty string (""). I tested this using both the default list of lists return value, and with a schema that would map empty fields to "undefined".
+- Works with a basic tuple schema
+- Throws an appropriate error when passed a schema and a CSV that has fields not following the schema's specifications
+- Works with two different schemas on the same CSV, and returns the appropriate types when parsing
+- Throws an appropriate error when passed a schema with refinements that the CSV fields don't fulfill
+
 #### How To…
+Run tests with "npm run test".
 
 #### Team members and contributions (include cs logins):
+N/A
 
 #### Collaborators (cslogins of anyone you worked with on this project and/or generative AI):
+No collaborators (except Copilot)
+
 #### Total estimated time it took to complete project:
 #### Link to GitHub Repo:  
