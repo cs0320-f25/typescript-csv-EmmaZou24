@@ -81,4 +81,7 @@ N/A
 No collaborators (except Copilot)
 
 #### Total estimated time it took to complete project:
+4-5 hours
+
 #### Link to GitHub Repo:  
+https://github.com/cs0320-f25/typescript-csv-EmmaZou24
